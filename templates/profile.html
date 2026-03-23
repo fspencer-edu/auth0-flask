@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile</title>
+</head>
+<body>
+  <h1>Profile</h1>
+
+  <p><strong>Name:</strong> {{ user.get("name", "N/A") }}</p>
+  <p><strong>Email:</strong> {{ user.get("email", "N/A") }}</p>
+  <p><strong>Nickname:</strong> {{ user.get("nickname", "N/A") }}</p>
+  <p><strong>Sub:</strong> {{ user.get("sub", "N/A") }}</p>
+
+  {% if user.get("picture") %}
+    <img src="{{ user.get('picture') }}" alt="Profile Picture" width="120" />
+  {% endif %}
+
+  <p>
+    <a href="{{ url_for('home') }}">Home</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+  </p>
+</body>
+</html>

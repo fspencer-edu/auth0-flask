@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flask Auth0 Demo</title>
+</head>
+<body>
+  <h1>Flask + Auth0 Demo</h1>
+
+  {% if user %}
+    <p>Signed in as: <strong>{{ user.get("name", user.get("email", "User")) }}</strong></p>
+    <p>
+      <a href="{{ url_for('profile') }}">Profile</a> |
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </p>
+  {% else %}
+    <p>You are not logged in.</p>
+    <a href="{{ url_for('login') }}">Login with Auth0</a>
+  {% endif %}
+</body>
+</html>
